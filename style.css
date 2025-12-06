@@ -1,0 +1,89 @@
+/* Thiết lập cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* BƯỚC 2: Định kiểu cho liên kết "Skip to content" */
+/* Nó sẽ bị ẩn khỏi màn hình nhưng vẫn đọc được bởi trình đọc màn hình */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+/* Khi nhấn phím Tab vào, nó sẽ hiện ra */
+.skip-link:focus {
+    top: 0;
+}
+
+/* BƯỚC 3: Nhận xét kiểu dáng hiện có cho phần tử li (Tôi sẽ comment nó lại như yêu cầu) */
+/* li {
+    list-style-type: none;
+    padding: 10px;
+} 
+*/
+
+/* BƯỚC 4: Thay đổi phần tử nav để sử dụng khối nội tuyến (inline-block) và rộng 80% */
+nav {
+    display: inline-block;
+    width: 80%;
+    background-color: #f4f4f4; /* Thêm màu nền để dễ nhìn thấy độ rộng */
+    vertical-align: top;
+}
+
+/* BƯỚC 5: Sử dụng bộ chọn hậu duệ (descendant selector) để style hình ảnh trong nav rộng 10% */
+nav img {
+    width: 10%;
+    vertical-align: middle;
+}
+
+/* BƯỚC 6 & 8: Tạo kiểu cho lớp lưới (.grid) */
+/* - Sử dụng lưới hai cột, mỗi cột xấp xỉ 40% */
+/* - Chơi với justify-content, align-items, row-gap */
+.grid {
+    display: grid;
+    /* Mỗi cột 40%, phần còn lại sẽ do justify-content xử lý */
+    grid-template-columns: 40% 40%; 
+    
+    /* Các thuộc tính yêu cầu trong Bước 8: */
+    justify-content: space-around; /* Căn chỉnh khoảng cách giữa các cột */
+    align-items: start;            /* Căn chỉnh theo chiều dọc */
+    row-gap: 20px;                 /* Khoảng cách giữa các hàng */
+    
+    margin-bottom: 50px;
+}
+
+/* BƯỚC 7: Bộ chọn hậu duệ style cho hình ảnh trong lớp lưới có chiều rộng 100% */
+/* Lưu ý: Chỉ ảnh hưởng ảnh trong .grid, không ảnh hưởng .flex */
+.grid img {
+    width: 100%;
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+    border: 1px solid #ddd;
+}
+
+/* BƯỚC 9: Tạo kiểu cho lớp flex (.flex) */
+/* - Sử dụng flex, flex-wrap và justify-content */
+.flex {
+    display: flex;
+    flex-wrap: wrap;        /* Cho phép xuống dòng nếu hết chỗ */
+    justify-content: center; /* Căn giữa các phần tử */
+    gap: 15px;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+/* Style phụ cho các mục trong flex để dễ nhìn (không bắt buộc trong đề bài) */
+.flex-item {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #333;
+    width: 150px;
+    text-align: center;
+}
